@@ -1,6 +1,6 @@
 <?php
 
-namespace Symfony\Component\Security\Guard\Token;
+namespace KnpU\GuardBundle\Guard\Token;
 
 /**
  * A marker interface that both guard tokens implement.

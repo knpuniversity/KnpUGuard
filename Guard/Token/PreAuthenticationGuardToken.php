@@ -1,6 +1,6 @@
 <?php
 
-namespace Symfony\Component\Security\Guard\Token;
+namespace KnpU\GuardBundle\Guard\Token;
 
 use Symfony\Component\Security\Core\Authentication\Token\AbstractToken;
 

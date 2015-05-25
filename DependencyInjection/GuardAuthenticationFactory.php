@@ -1,11 +1,12 @@
 <?php
 
-namespace Symfony\Bundle\SecurityBundle\DependencyInjection\Security\Factory;
+namespace KnpU\GuardBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\NodeDefinition;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\DefinitionDecorator;
 use Symfony\Component\DependencyInjection\Reference;
+use Symfony\Bundle\SecurityBundle\DependencyInjection\Security\Factory\SecurityFactoryInterface;
 
 /**
  * Configures the "guard" authentication provider key under a firewall.
@@ -21,7 +22,7 @@ class GuardAuthenticationFactory implements SecurityFactoryInterface
 
     public function getKey()
     {
-        return 'guard';
+        return 'knpu_guard';
     }
 
     public function addConfiguration(NodeDefinition $node)

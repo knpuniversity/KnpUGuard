@@ -1,13 +1,13 @@
 <?php
 
-namespace Symfony\Component\Security\Guard\Provider;
+namespace KnpU\GuardBundle\Guard\Provider;
 
 use Symfony\Component\Security\Core\Authentication\Provider\AuthenticationProviderInterface;
 use Symfony\Component\Security\Core\Authentication\Token\AnonymousToken;
 use Symfony\Component\Security\Core\Exception\UsernameNotFoundException;
-use Symfony\Component\Security\Guard\GuardAuthenticatorInterface;
-use Symfony\Component\Security\Guard\Token\GuardTokenInterface;
-use Symfony\Component\Security\Guard\Token\PreAuthenticationGuardToken;
+use KnpU\GuardBundle\Guard\GuardAuthenticatorInterface;
+use KnpU\GuardBundle\Guard\Token\GuardTokenInterface;
+use KnpU\GuardBundle\Guard\Token\PreAuthenticationGuardToken;
 use Symfony\Component\Security\Core\User\UserCheckerInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Security\Core\User\UserProviderInterface;
