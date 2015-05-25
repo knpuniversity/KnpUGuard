@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace Symfony\Component\Security\Guard\Tests\Provider;
+namespace KnpU\GuardBundle\Tests\Provider;
 
 use Symfony\Component\Security\Core\Authentication\Token\AnonymousToken;
-use Symfony\Component\Security\Guard\Provider\GuardAuthenticationProvider;
-use Symfony\Component\Security\Guard\Token\PostAuthenticationGuardToken;
+use KnpU\GuardBundle\Guard\Provider\GuardAuthenticationProvider;
+use KnpU\GuardBundle\Guard\Token\PostAuthenticationGuardToken;
 
 /**
  * @author Ryan Weaver <weaverryan@gmail.com>

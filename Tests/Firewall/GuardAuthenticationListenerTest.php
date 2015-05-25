@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace Symfony\Component\Security\Guard\Tests\Firewall;
+namespace KnpU\GuardBundle\Tests\Firewall;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Security\Guard\Firewall\GuardAuthenticationListener;
-use Symfony\Component\Security\Guard\Token\PreAuthenticationGuardToken;
+use KnpU\GuardBundle\Guard\Firewall\GuardAuthenticationListener;
+use KnpU\GuardBundle\Guard\Token\PreAuthenticationGuardToken;
 use Symfony\Component\Security\Core\Exception\AuthenticationException;
 
 /**
