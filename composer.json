@@ -1,0 +1,32 @@
+
+{
+    "name": "knpuniversity/guard-bundle",
+    "type": "symfony-bundle",
+    "description": "This Bundle provides Guard-style authentication in Symfony",
+    "keywords": ["security"],
+    "homepage": "http://knpuniversity.com",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ryan Weaver",
+            "email": "weaverryan@gmail.com"
+        }
+    ],
+
+    "require": {
+        "php":                            ">=5.3.9",
+        "symfony/framework-bundle":       "~2.3"
+    },
+
+    "autoload": {
+        "psr-4": { "KnpU\\GuardBundle\\": "" }
+    },
+
+    "target-dir": "KnpU/GuardBundle",
+
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.1-dev"
+        }
+    }
+}
