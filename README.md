@@ -2,4 +2,4 @@
 
 Simple authentication for Symfony, right now.
 
-[![Build Status](https://travis-ci.org/KnpUniversity/KnpUGuardBundle.svg?branch=master)](https://travis-ci.org/KnpUniversity/KnpUGuardBundle)
+[![Build Status](https://travis-ci.org/knpuniversity/KnpUGuardBundle.svg?branch=master)](https://travis-ci.org/knpuniversity/KnpUGuardBundle)
