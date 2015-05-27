@@ -85,7 +85,7 @@ class GuardAuthenticatorHandlerTest extends \PHPUnit_Framework_TestCase
         $this->dispatcher = $this->getMock('Symfony\Component\EventDispatcher\EventDispatcherInterface');
         $this->token = $this->getMock('Symfony\Component\Security\Core\Authentication\Token\TokenInterface');
         $this->request = new Request(array(), array(), array(), array(), array(), array());
-        $this->guardAuthenticator = $this->getMock('Symfony\Component\Security\Guard\GuardAuthenticatorInterface');
+        $this->guardAuthenticator = $this->getMock('KnpU\GuardBundle\Guard\GuardAuthenticatorInterface');
     }
 
     protected function tearDown()

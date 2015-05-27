@@ -15,7 +15,8 @@
 
     "require": {
         "php":                            ">=5.3.9",
-        "symfony/framework-bundle":       "~2.3"
+        "symfony/framework-bundle":       "~2.3",
+        "symfony/security-bundle":       "~2.3"
     },
 
     "autoload": {
