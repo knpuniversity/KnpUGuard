@@ -11,6 +11,8 @@ from people so that we can merge this feature into Symfony itself
 
 ## Installation
 
+**This bundle requires Symfony 2.6 or higher.**
+
 First, wave your [composer](https://getcomposer.org/) wand to install things:
 
 ```bash
