@@ -22,10 +22,5 @@
     "autoload": {
         "psr-4": { "KnpU\\GuardBundle\\": "" }
     },
-
-    "extra": {
-        "branch-alias": {
-            "dev-master": "0.1-dev"
-        }
-    }
+    "minimum-stability": "dev"
 }
