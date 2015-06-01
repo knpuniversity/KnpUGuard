@@ -20,6 +20,5 @@
 
     "autoload": {
         "psr-4": { "KnpU\\GuardBundle\\": "" }
-    },
-    "minimum-stability": "dev"
+    }
 }
