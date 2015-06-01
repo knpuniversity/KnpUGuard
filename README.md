@@ -16,7 +16,7 @@ from people so that we can merge this feature into Symfony itself
 First, wave your [composer](https://getcomposer.org/) wand to install things:
 
 ```bash
-composer require knpuniversity/guard-bundle
+composer require knpuniversity/guard-bundle:0.1@dev
 ```
 
 Next, plug the bundle into your `app/AppKernel.php` file:
