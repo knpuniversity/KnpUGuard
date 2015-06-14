@@ -1,14 +1,14 @@
 <?php
 
-namespace KnpU\GuardBundle\Guard\Firewall;
+namespace KnpU\Guard\Firewall;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Event\GetResponseEvent;
-use KnpU\GuardBundle\Guard\GuardAuthenticatorHandler;
-use KnpU\GuardBundle\Guard\Token\PreAuthenticationGuardToken;
+use KnpU\Guard\GuardAuthenticatorHandler;
+use KnpU\Guard\Token\PreAuthenticationGuardToken;
 use Symfony\Component\Security\Core\Authentication\AuthenticationManagerInterface;
-use KnpU\GuardBundle\Guard\GuardAuthenticatorInterface;
+use KnpU\Guard\GuardAuthenticatorInterface;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
 use Symfony\Component\Security\Core\Exception\AuthenticationException;

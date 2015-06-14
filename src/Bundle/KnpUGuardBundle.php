@@ -1,10 +1,10 @@
 <?php
 
-namespace KnpU\GuardBundle;
+namespace KnpU\Guard\Bundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
-use KnpU\GuardBundle\DependencyInjection\GuardAuthenticationFactory;
+use KnpU\Guard\Bundle\DependencyInjection\GuardAuthenticationFactory;
 
 class KnpUGuardBundle extends Bundle
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace KnpU\GuardBundle\Guard;
+namespace KnpU\Guard;
 
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\HttpFoundation\Request;

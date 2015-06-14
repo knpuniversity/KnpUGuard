@@ -1,6 +1,6 @@
 <?php
 
-namespace KnpU\GuardBundle\Guard\Token;
+namespace KnpU\Guard\Token;
 
 use Symfony\Component\Security\Core\Authentication\Token\AbstractToken;
 use Symfony\Component\Security\Core\Role\RoleInterface;

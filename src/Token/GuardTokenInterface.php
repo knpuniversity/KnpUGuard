@@ -1,6 +1,6 @@
 <?php
 
-namespace KnpU\GuardBundle\Guard\Token;
+namespace KnpU\Guard\Token;
 
 /**
  * A marker interface that both guard tokens implement.

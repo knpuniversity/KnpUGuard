@@ -1,9 +1,9 @@
 <?php
 
-namespace KnpU\GuardBundle\Guard;
+namespace KnpU\Guard;
 
 use Symfony\Component\Security\Core\User\UserInterface;
-use KnpU\GuardBundle\Guard\Token\PostAuthenticationGuardToken;
+use KnpU\Guard\Token\PostAuthenticationGuardToken;
 
 /**
  * An optional base class that creates a PostAuthenticationGuardToken for you.

@@ -1,6 +1,6 @@
 <?php
 
-namespace KnpU\GuardBundle\DependencyInjection;
+namespace KnpU\Guard\Bundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\NodeDefinition;
 use Symfony\Component\DependencyInjection\ContainerBuilder;

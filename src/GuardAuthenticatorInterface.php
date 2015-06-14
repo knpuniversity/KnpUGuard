@@ -1,6 +1,6 @@
 <?php
 
-namespace KnpU\GuardBundle\Guard;
+namespace KnpU\Guard;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -8,7 +8,7 @@ use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
 use Symfony\Component\Security\Core\Exception\AuthenticationException;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Security\Core\User\UserProviderInterface;
-use KnpU\GuardBundle\Guard\Token\GuardTokenInterface;
+use KnpU\Guard\Token\GuardTokenInterface;
 use Symfony\Component\Security\Http\EntryPoint\AuthenticationEntryPointInterface;
 
 /**
