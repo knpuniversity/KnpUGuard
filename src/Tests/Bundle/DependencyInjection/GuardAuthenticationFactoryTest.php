@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace KnpU\GuardBundle\Tests\DependencyInjection;
+namespace KnpU\Guard\Tests\Bundle\DependencyInjection;
 
-use KnpU\GuardBundle\DependencyInjection\GuardAuthenticationFactory;
+use KnpU\Guard\Bundle\DependencyInjection\GuardAuthenticationFactory;
 use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Reference;

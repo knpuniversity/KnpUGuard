@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace KnpU\GuardBundle\Tests;
+namespace KnpU\Guard\Tests;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use KnpU\GuardBundle\Guard\GuardAuthenticatorHandler;
+use KnpU\Guard\GuardAuthenticatorHandler;
 use Symfony\Component\Security\Core\Exception\AuthenticationException;
 use Symfony\Component\Security\Http\Event\InteractiveLoginEvent;
 use Symfony\Component\Security\Http\SecurityEvents;
@@ -85,7 +85,7 @@ class GuardAuthenticatorHandlerTest extends \PHPUnit_Framework_TestCase
         $this->dispatcher = $this->getMock('Symfony\Component\EventDispatcher\EventDispatcherInterface');
         $this->token = $this->getMock('Symfony\Component\Security\Core\Authentication\Token\TokenInterface');
         $this->request = new Request(array(), array(), array(), array(), array(), array());
-        $this->guardAuthenticator = $this->getMock('KnpU\GuardBundle\Guard\GuardAuthenticatorInterface');
+        $this->guardAuthenticator = $this->getMock('KnpU\Guard\GuardAuthenticatorInterface');
     }
 
     protected function tearDown()

@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace KnpU\GuardBundle\Tests\Firewall;
+namespace KnpU\Guard\Tests\Firewall;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use KnpU\GuardBundle\Guard\Firewall\GuardAuthenticationListener;
-use KnpU\GuardBundle\Guard\Token\PreAuthenticationGuardToken;
+use KnpU\Guard\Firewall\GuardAuthenticationListener;
+use KnpU\Guard\Token\PreAuthenticationGuardToken;
 use Symfony\Component\Security\Core\Exception\AuthenticationException;
 
 /**
@@ -31,7 +31,7 @@ class GuardAuthenticationListenerTest extends \PHPUnit_Framework_TestCase
 
     public function testHandleSuccess()
     {
-        $authenticator = $this->getMock('KnpU\GuardBundle\Guard\GuardAuthenticatorInterface');
+        $authenticator = $this->getMock('KnpU\Guard\GuardAuthenticatorInterface');
         $authenticateToken = $this->getMock('Symfony\Component\Security\Core\Authentication\Token\TokenInterface');
         $providerKey = 'my_firewall';
 
@@ -81,7 +81,7 @@ class GuardAuthenticationListenerTest extends \PHPUnit_Framework_TestCase
 
     public function testHandleSuccessWithRememberMe()
     {
-        $authenticator = $this->getMock('KnpU\GuardBundle\Guard\GuardAuthenticatorInterface');
+        $authenticator = $this->getMock('KnpU\Guard\GuardAuthenticatorInterface');
         $authenticateToken = $this->getMock('Symfony\Component\Security\Core\Authentication\Token\TokenInterface');
         $providerKey = 'my_firewall_with_rememberme';
 
@@ -124,7 +124,7 @@ class GuardAuthenticationListenerTest extends \PHPUnit_Framework_TestCase
 
     public function testHandleCatchesAuthenticationException()
     {
-        $authenticator = $this->getMock('KnpU\GuardBundle\Guard\GuardAuthenticatorInterface');
+        $authenticator = $this->getMock('KnpU\Guard\GuardAuthenticatorInterface');
         $providerKey = 'my_firewall2';
 
         $authException = new AuthenticationException('Get outta here crazy user with a bad password!');
@@ -156,8 +156,8 @@ class GuardAuthenticationListenerTest extends \PHPUnit_Framework_TestCase
 
     public function testReturnNullToSkipAuth()
     {
-        $authenticatorA = $this->getMock('KnpU\GuardBundle\Guard\GuardAuthenticatorInterface');
-        $authenticatorB = $this->getMock('KnpU\GuardBundle\Guard\GuardAuthenticatorInterface');
+        $authenticatorA = $this->getMock('KnpU\Guard\GuardAuthenticatorInterface');
+        $authenticatorB = $this->getMock('KnpU\Guard\GuardAuthenticatorInterface');
         $providerKey = 'my_firewall3';
 
         $authenticatorA
@@ -195,7 +195,7 @@ class GuardAuthenticationListenerTest extends \PHPUnit_Framework_TestCase
             ->disableOriginalConstructor()
             ->getMock();
 
-        $this->guardAuthenticatorHandler = $this->getMockBuilder('KnpU\GuardBundle\Guard\GuardAuthenticatorHandler')
+        $this->guardAuthenticatorHandler = $this->getMockBuilder('KnpU\Guard\GuardAuthenticatorHandler')
             ->disableOriginalConstructor()
             ->getMock();
 

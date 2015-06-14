@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace KnpU\GuardBundle\Tests\Provider;
+namespace KnpU\Guard\Tests\Provider;
 
 use Symfony\Component\Security\Core\Authentication\Token\AnonymousToken;
-use KnpU\GuardBundle\Guard\Provider\GuardAuthenticationProvider;
-use KnpU\GuardBundle\Guard\Token\PostAuthenticationGuardToken;
+use KnpU\Guard\Provider\GuardAuthenticationProvider;
+use KnpU\Guard\Token\PostAuthenticationGuardToken;
 
 /**
  * @author Ryan Weaver <weaverryan@gmail.com>
@@ -28,9 +28,9 @@ class GuardAuthenticationProviderTest extends \PHPUnit_Framework_TestCase
     {
         $providerKey = 'my_cool_firewall';
 
-        $authenticatorA = $this->getMock('KnpU\GuardBundle\Guard\GuardAuthenticatorInterface');
-        $authenticatorB = $this->getMock('KnpU\GuardBundle\Guard\GuardAuthenticatorInterface');
-        $authenticatorC = $this->getMock('KnpU\GuardBundle\Guard\GuardAuthenticatorInterface');
+        $authenticatorA = $this->getMock('KnpU\Guard\GuardAuthenticatorInterface');
+        $authenticatorB = $this->getMock('KnpU\Guard\GuardAuthenticatorInterface');
+        $authenticatorC = $this->getMock('KnpU\Guard\GuardAuthenticatorInterface');
         $authenticators = array($authenticatorA, $authenticatorB, $authenticatorC);
 
         // called 2 times - for authenticator A and B (stops on B because of match)
@@ -101,7 +101,7 @@ class GuardAuthenticationProviderTest extends \PHPUnit_Framework_TestCase
     {
         $this->userProvider = $this->getMock('Symfony\Component\Security\Core\User\UserProviderInterface');
         $this->userChecker = $this->getMock('Symfony\Component\Security\Core\User\UserCheckerInterface');
-        $this->preAuthenticationToken = $this->getMockBuilder('KnpU\GuardBundle\Guard\Token\PreAuthenticationGuardToken')
+        $this->preAuthenticationToken = $this->getMockBuilder('KnpU\Guard\Token\PreAuthenticationGuardToken')
             ->disableOriginalConstructor()
             ->getMock();
     }
