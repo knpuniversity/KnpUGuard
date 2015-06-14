@@ -1,7 +1,7 @@
 {
-    "name": "knpuniversity/guard-bundle",
+    "name": "knpuniversity/guard",
     "type": "symfony-bundle",
-    "description": "This Bundle provides Guard-style authentication in Symfony",
+    "description": "Provides Guard-style authentication to Symfony with Framework and Silex integration",
     "keywords": ["security"],
     "homepage": "http://knpuniversity.com",
     "license": "MIT",
@@ -13,12 +13,14 @@
     ],
 
     "require": {
-        "php":                            ">=5.3.9",
+        "php":                            ">=5.3.9"
+    },
+    "require-dev": {
         "symfony/framework-bundle":       "~2.3",
         "symfony/security-bundle":       "~2.6"
     },
 
     "autoload": {
-        "psr-4": { "KnpU\\GuardBundle\\": "" }
+        "psr-4": { "KnpU\\Guard\\": "src/" }
     }
 }
