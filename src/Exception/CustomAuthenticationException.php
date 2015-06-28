@@ -1,6 +1,6 @@
 <?php
 
-namespace KnpU\GuardBundle\Security\Exception;
+namespace KnpU\Guard\Exception;
 
 use Symfony\Component\Security\Core\Exception\AuthenticationException;
 
