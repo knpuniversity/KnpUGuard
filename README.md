@@ -16,7 +16,7 @@ from people so that we can merge this feature into Symfony itself
 First, wave your [composer](https://getcomposer.org/) wand to install things:
 
 ```bash
-composer require knpuniversity/guard-bundle:0.1@dev
+composer require knpuniversity/guard-bundle:dev-master
 ```
 
 Next, plug the bundle into your `app/AppKernel.php` file:
@@ -47,8 +47,8 @@ or both, you'll follow the same 3-step process:
 Each time you want to authenticate a user, you'll start by creating a class
 that extends [KnpU\GuardBundle\Guard\AbstractGuardAuthenticator](https://github.com/knpuniversity/KnpUGuardBundle/blob/master/Guard/AbstractGuardAuthenticator.php)
 (or implements [KnpU\GuardBundle\Guard\GuardAuthenticatorInterface](https://github.com/knpuniversity/KnpUGuardBundle/blob/master/Guard/GuardAuthenticatorInterface.php)).
-For examples, see [TokenAuthenticator](https://github.com/knpuniversity/symfony-guard-demo/blob/guard-auth/src/AppBundle/Security/TokenAuthenticator.php)
-and [FormLoginAuthenticator](https://github.com/knpuniversity/symfony-guard-demo/blob/guard-auth/src/AppBundle/Security/FormLoginAuthenticator.php).
+For examples, see [TokenAuthenticator](https://github.com/knpuniversity/symfony-guard-demo/blob/master/src/AppBundle/Security/TokenAuthenticator.php)
+and [FormLoginAuthenticator](https://github.com/knpuniversity/symfony-guard-demo/blob/master/src/AppBundle/Security/FormLoginAuthenticator.php).
 
 This interface has a method for every part of the authentication process,
 from fetching the credentials (e.g. username/password or API token) from
@@ -61,7 +61,7 @@ It's passed to the `getUser()` method of your authenticator. Whether you
 are loading users from a database or elsewhere, I recommend creating your
 own user provider class.
 
-For example, see [UserProvider](https://github.com/knpuniversity/symfony-guard-demo/blob/guard-auth/src/AppBundle/Security/UserProvider.php)
+For example, see [UserProvider](https://github.com/knpuniversity/symfony-guard-demo/blob/master/src/AppBundle/Security/UserProvider.php)
 from the demo project.
 
 ### 3) Register the authenticator (and user provider) as a service
@@ -86,7 +86,7 @@ services:
 
 ### 4) Configure security.yml
 
-For a full example `security.yml`, see [security.yml](https://github.com/knpuniversity/symfony-guard-demo/blob/guard-auth/app/config/security.yml)
+For a full example `security.yml`, see [security.yml](https://github.com/knpuniversity/symfony-guard-demo/blob/master/app/config/security.yml)
 in the demo app.
 
 There are basically only two critical areas to configure: `providers`
