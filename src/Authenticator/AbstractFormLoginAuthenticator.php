@@ -36,19 +36,6 @@ abstract class AbstractFormLoginAuthenticator extends AbstractGuardAuthenticator
     abstract protected function getDefaultSuccessRedirectUrl();
 
     /**
-     * Override this to load the user in another way or to throw a different
-     * exception for a custom message when there is no user
-     *
-     * @param mixed $credentials
-     * @param UserProviderInterface $userProvider
-     * @return UserInterface
-     */
-    public function getUser($credentials, UserProviderInterface $userProvider)
-    {
-        return $userProvider->loadUserByUsername($credentials['username']);
-    }
-
-    /**
      * Override to change what happens after a bad username/password is submitted
      *
      * @param Request $request
