@@ -12,10 +12,9 @@
     ],
 
     "require": {
-        "php":                            ">=5.3.9"
-    },
-    "require-dev": {
-        "symfony/security":       "~2.6"
+        "php":                            ">=5.3.9",
+        "symfony/security-core":       "~2.6",
+        "symfony/security-http":       "~2.6"
     },
 
     "autoload": {
