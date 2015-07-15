@@ -25,7 +25,7 @@ cache:
   directories:
     - $HOME/.composer/cache
 
-script: phpunit
+script: vendor/bin/phpunit
 
 before_script:
   - composer self-update
