@@ -21,8 +21,6 @@ matrix:
       env: SYMFONY_VERSION=2.6.*
     - php: 5.5
       env: SYMFONY_VERSION='2.7.*@dev'
-  allow_failures:
-    - 7.0
 
 cache:
   directories:
