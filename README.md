@@ -5,10 +5,17 @@ and anywhere else.
 
 [![Build Status](https://travis-ci.org/knpuniversity/KnpUGuard.svg?branch=master)](https://travis-ci.org/knpuniversity/KnpUGuard)
 
-This is a library is usable, but is *alpha*, and backwards compatibility
-is not guaranteed yet. The original purpose was to get feedback and use-cases
-from people so that we can merge this feature into Symfony itself
+**This library is *deprecated* since Symfony 2.8 and won't work with Symfony 3.**
+
+The original purpose was to get feedback and use-cases from people so that we can merge this feature into Symfony itself
 (see [symfony/symfony#14673](https://github.com/symfony/symfony/pull/14673)).
+
+Now it's good (see [news from Symfony](http://symfony.com/blog/new-in-symfony-2-8-guard-authentication-component)).
+
+## Upgrade to Symfony 3
+
+On Symfony 2.8, use the official [Guard component](https://symfony.com/doc/master/cookbook/security/guard-authentication.html) and remove this library from your `composer.json`.
+Then you'll be able to upgrade to Symfony 3.
 
 ## Documentation
 
