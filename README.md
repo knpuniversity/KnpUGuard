@@ -26,10 +26,9 @@ Before:
     "require": {
         "php": ">=5.5",
         "symfony/symfony": "~2.8",
-        ...
+        "...": "...",
         "knpuniversity/guard-bundle": "~0.1@dev"
     },
-    "require-dev": {...},
 }
 ```
 
@@ -39,56 +38,14 @@ Now:
     "require": {
         "php": ">=5.5",
         "symfony/symfony": "~2.8",
-        ...
+        "...": "..."
     },
-    "require-dev": {...},
 }
 ```
 
 ### Step 2 - Remove it from your AppKernel
 
-Open and remove the Bundle from `AppKernel.php` file:
-
-Before:
-```php
-// app/AppKernel.php
-class AppKernel extends Kernel
-{
-    // ...
-    
-    public function registerBundles()
-    {
-        $bundles = array(
-            // ...
-            new KnpU\GuardBundle\KnpUGuardBundle(),
-        );
-        
-        // ...
-    }
-    
-    // ...
-}
-```
-
-Now:
-```php
-// app/AppKernel.php
-class AppKernel extends Kernel
-{
-    // ...
-    
-    public function registerBundles()
-    {
-        $bundles = array(
-            // ...
-        );
-        
-        // ...
-    }
-    
-    // ...
-}
-```
+If you're using the Symfony framework, remove the KnpUGuardBundle from `AppKernel.php`.
 
 ### Step 3 - Modify firewall(s)
 
@@ -138,7 +95,10 @@ security:
 
 ### Step 4 - Update Authenticator(s)
 
-Update uses in Authenticator(s) class(es):
+Update uses in Authenticator(s) class(es).
+
+**Warning:** checkCredentials() NOW must return true in order for authentication to be successful. 
+In KnpUGuard, if you did NOT throw an AuthenticationException, it would pass.
 
 Before:
 ```php
@@ -149,6 +109,20 @@ use KnpU\Guard\...;
 class FormLoginAuthenticator extends AbstractFormLoginAuthenticator
 {
     // ...
+
+    public function checkCredentials($credentials, UserInterface $user)
+    {
+        // ...
+        
+        if ($password !== 'correctPassword') {
+            throw new AuthenticationException();
+        }
+
+        // do nothing, allow authentication to pass
+    }
+
+    // ...
+}
 ```
 
 Now:
@@ -160,6 +134,24 @@ use Symfony\Component\Security\Guard\...;
 class FormLoginAuthenticator extends AbstractFormLoginAuthenticator
 {
     // ...
+
+    public function checkCredentials($credentials, UserInterface $user)
+    {
+        // ...
+        
+        if ($password !== 'correctPassword') {
+            // returning anything NOT true will cause an authentication failure
+            return;
+            // or, you can still throw an AuthenticationException if you want to
+            // throw new AuthenticationException();
+        }
+
+        // return true to make authentication successful
+        return true;
+    }
+
+    // ...
+}
 ```
 
 ### Step 5 - Yes we can test it
