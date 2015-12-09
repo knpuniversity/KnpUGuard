@@ -14,8 +14,160 @@ Now it's good (see [news from Symfony](http://symfony.com/blog/new-in-symfony-2-
 
 ## Upgrade to Symfony 3
 
-On Symfony 2.8, use the official [Guard component](https://symfony.com/doc/master/cookbook/security/guard-authentication.html) and remove this library from your `composer.json`.
-Then you'll be able to upgrade to Symfony 3.
+On Symfony 2.8, use the official [Guard component](https://symfony.com/doc/master/cookbook/security/guard-authentication.html).
+
+### Step 1 - Remove the library from your composer.json
+
+Be sure to be on Symfony 2.8, open `composer.json` file and remove the library:
+
+Before:
+```json
+{
+    "require": {
+        "php": ">=5.5",
+        "symfony/symfony": "~2.8",
+        ...
+        "knpuniversity/guard-bundle": "~0.1@dev"
+    },
+    "require-dev": {...},
+}
+```
+
+Now:
+```json
+{
+    "require": {
+        "php": ">=5.5",
+        "symfony/symfony": "~2.8",
+        ...
+    },
+    "require-dev": {...},
+}
+```
+
+### Step 2 - Remove it from your AppKernel
+
+Open and remove the Bundle from `AppKernel.php` file:
+
+Before:
+```php
+// app/AppKernel.php
+class AppKernel extends Kernel
+{
+    // ...
+    
+    public function registerBundles()
+    {
+        $bundles = array(
+            // ...
+            new KnpU\GuardBundle\KnpUGuardBundle(),
+        );
+        
+        // ...
+    }
+    
+    // ...
+}
+```
+
+Now:
+```php
+// app/AppKernel.php
+class AppKernel extends Kernel
+{
+    // ...
+    
+    public function registerBundles()
+    {
+        $bundles = array(
+            // ...
+        );
+        
+        // ...
+    }
+    
+    // ...
+}
+```
+
+### Step 3 - Modify firewall(s)
+
+Open and modify `security.yml` file, replace in your firewall(s) key(s) `knpu_guard` by `guard`:
+
+Before:
+```yaml
+# app/config/security.yml
+security:
+    # ...
+
+    firewalls:
+        # ...
+
+        main:
+            anonymous: ~
+            logout: ~
+
+            knpu_guard:
+                authenticators:
+                    - app.form_login_authenticator
+
+            # maybe other things, like form_login, remember_me, etc
+            # ...
+```
+
+Now:
+```yaml
+# app/config/security.yml
+security:
+    # ...
+
+    firewalls:
+        # ...
+
+        main:
+            anonymous: ~
+            logout: ~
+
+            guard:
+                authenticators:
+                    - app.form_login_authenticator
+
+            # maybe other things, like form_login, remember_me, etc
+            # ...
+```
+
+### Step 4 - Update Authenticator(s)
+
+Update uses in Authenticator(s) class(es):
+
+Before:
+```php
+use KnpU\Guard\Authenticator\AbstractFormLoginAuthenticator;
+use KnpU\Guard\...;
+// ...
+
+class FormLoginAuthenticator extends AbstractFormLoginAuthenticator
+{
+    // ...
+```
+
+Now:
+```php
+use Symfony\Component\Security\Guard\AbstractFormLoginAuthenticator;
+use Symfony\Component\Security\Guard\...;
+// ...
+
+class FormLoginAuthenticator extends AbstractFormLoginAuthenticator
+{
+    // ...
+```
+
+### Step 5 - Yes we can test it
+
+Upgrade to Symfony 3 (won't be worst than from Symfony 1 to Symfony 2) ;-)
+
+- [http://symfony.com/doc/current/cookbook/upgrade/major_version.html](http://symfony.com/doc/current/cookbook/upgrade/major_version.html)
+- [https://knpuniversity.com/screencast/new-symfony-2.2/symfony3](https://knpuniversity.com/screencast/new-symfony-2.2/symfony3)
 
 ## Documentation
 
