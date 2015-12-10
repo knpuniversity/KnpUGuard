@@ -156,10 +156,9 @@ class FormLoginAuthenticator extends AbstractFormLoginAuthenticator
 
 ### Step 5 - Yes we can test it
 
-Upgrade to Symfony 3 (won't be worst than from Symfony 1 to Symfony 2) ;-)
+That's it! Try it out, and then upgrade to Symfony 3 :).
 
 - [http://symfony.com/doc/current/cookbook/upgrade/major_version.html](http://symfony.com/doc/current/cookbook/upgrade/major_version.html)
-- [https://knpuniversity.com/screencast/new-symfony-2.2/symfony3](https://knpuniversity.com/screencast/new-symfony-2.2/symfony3)
 
 ## Documentation
 
